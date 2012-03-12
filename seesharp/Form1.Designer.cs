@@ -43,6 +43,7 @@
             this.splitContainer1 = new System.Windows.Forms.SplitContainer();
             this.splitContainer2 = new System.Windows.Forms.SplitContainer();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.button4 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown2)).BeginInit();
@@ -128,7 +129,6 @@
             // imageShow1
             // 
             this.imageShow1.BackColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.imageShow1.BackgroundImage = global::seesharp.Properties.Resources.Image04;
             this.imageShow1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.imageShow1.Location = new System.Drawing.Point(3, 3);
             this.imageShow1.Name = "imageShow1";
@@ -205,6 +205,7 @@
             // panel2
             // 
             this.panel2.AutoScroll = true;
+            this.panel2.Controls.Add(this.button4);
             this.panel2.Controls.Add(this.button2);
             this.panel2.Controls.Add(this.numericUpDown1);
             this.panel2.Controls.Add(this.button3);
@@ -215,6 +216,16 @@
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(226, 445);
             this.panel2.TabIndex = 11;
+            // 
+            // button4
+            // 
+            this.button4.Location = new System.Drawing.Point(36, 198);
+            this.button4.Name = "button4";
+            this.button4.Size = new System.Drawing.Size(120, 23);
+            this.button4.TabIndex = 12;
+            this.button4.Text = "DElECT";
+            this.button4.UseVisualStyleBackColor = true;
+            this.button4.Click += new System.EventHandler(this.button4_Click);
             // 
             // button2
             // 
@@ -271,6 +282,7 @@
         private System.Windows.Forms.SplitContainer splitContainer2;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button button4;
     }
 }
 

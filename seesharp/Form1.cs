@@ -36,9 +36,10 @@ namespace seesharp
                 {
                     image = Image.FromFile(openFileDialog1.FileName);
                     textBox1.Text = openFileDialog1.FileName;
-                    string n = openFileDialog1.SafeFileName;
-                    listBox1.Items.Add(n);
-                    myImage.add(n);
+                    //string n = openFileDialog1.SafeFileName;
+                    string name = System.IO.Path.GetFileNameWithoutExtension(openFileDialog1.SafeFileName);
+                    listBox1.Items.Add(name);
+                    myImage.add(name);
                     System.Drawing.Imaging.ImageFormat type = image.RawFormat;
                     imageShow1.BackgroundImage = image;
                 }
@@ -49,17 +50,8 @@ namespace seesharp
             }
         }
 
-        private void checkedListBox1_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
-        }
-
         private void InitMyForm()
         {
-            
-            image = seesharp.Properties.Resources.Image04;
-            width = seesharp.Properties.Resources.Image04.Width;
-            height = seesharp.Properties.Resources.Image04.Height;
             openFileDialog1.InitialDirectory = Application.StartupPath;
             if (File.Exists(Application.StartupPath + "\\TEST.xml"))
                 LoadFromFile(Application.StartupPath + "\\TEST.xml");
@@ -150,6 +142,21 @@ namespace seesharp
         private void button2_Click(object sender, EventArgs e)
         {
             SaveToFile(Application.StartupPath + "\\TEST.xml");
+        }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            if (listBox1.Items.Count > 0 && listBox1.SelectedIndex > -1)
+            {
+                string n = listBox1.SelectedItem.ToString();
+                myImage.del(n);
+                listBox1.Items.Remove(listBox1.SelectedItem);
+            }
+        }
+
+        private void listBox1_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
