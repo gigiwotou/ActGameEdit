@@ -145,6 +145,7 @@
             this.listBox1.Name = "listBox1";
             this.listBox1.Size = new System.Drawing.Size(117, 448);
             this.listBox1.TabIndex = 8;
+            this.listBox1.Click += new System.EventHandler(this.listBox1_Click);
             // 
             // label1
             // 

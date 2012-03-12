@@ -7,26 +7,39 @@ namespace seesharp
 {
     public class MyImage
     {
-        public struct ImageInfo
+        public class ImageInfo
         {
-           string name;
-           string filename;
-           int row;
-           int col;
+           public string name;
+           public string filename;
+           public int row;
+           public int col;
         }
-        private List<string> objectTypes = new List<string>();
-        public List<string> ObjectTypes { get { return objectTypes; } }
+        private List<ImageInfo> objectTypes = new List<ImageInfo>();
+        public List<ImageInfo> ObjectTypes { get { return objectTypes; } }
         
         public MyImage()
         {
         }
-        public void add(string n)
+        public void add(ImageInfo n)
         {
             objectTypes.Add(n);
         }
-        public void del(string n)
+        
+        public void del(ImageInfo n)
         {
             objectTypes.Remove(n);
+        }
+
+        public void del (int index)
+        {
+            objectTypes.RemoveAt(index);
+        }
+
+        public ImageInfo find (int index)
+        {
+            if (objectTypes.Count < (index + 1))
+                return null;
+            return objectTypes[index];
         }
     }
 }

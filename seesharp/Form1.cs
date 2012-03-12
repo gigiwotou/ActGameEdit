@@ -39,7 +39,11 @@ namespace seesharp
                     //string n = openFileDialog1.SafeFileName;
                     string name = System.IO.Path.GetFileNameWithoutExtension(openFileDialog1.SafeFileName);
                     listBox1.Items.Add(name);
-                    myImage.add(name);
+                    MyImage.ImageInfo info = new MyImage.ImageInfo();
+                    info.name = name;
+                    info.filename = name;
+
+                    myImage.add(info);
                     System.Drawing.Imaging.ImageFormat type = image.RawFormat;
                     imageShow1.BackgroundImage = image;
                 }
@@ -56,15 +60,20 @@ namespace seesharp
             if (File.Exists(Application.StartupPath + "\\TEST.xml"))
                 LoadFromFile(Application.StartupPath + "\\TEST.xml");
 
-            foreach (string prime in myImage.ObjectTypes) // Loop through List with foreach
+            foreach (MyImage.ImageInfo prime in myImage.ObjectTypes) // Loop through List with foreach
             {
-                listBox1.Items.Add(prime);
+                listBox1.Items.Add(prime.name);
             }
         }
 
         private void button3_Click(object sender, EventArgs e)
         {
             mShowLines = !mShowLines;
+            MyImage.ImageInfo info = myImage.find(listBox1.SelectedIndex);
+            if (info == null)
+                return;
+            info.row = (int)numericUpDown2.Value;
+            info.col = (int)numericUpDown1.Value;
             imageShow1.Invalidate();
         }
 
@@ -149,14 +158,33 @@ namespace seesharp
             if (listBox1.Items.Count > 0 && listBox1.SelectedIndex > -1)
             {
                 string n = listBox1.SelectedItem.ToString();
-                myImage.del(n);
+                myImage.del(listBox1.SelectedIndex);
                 listBox1.Items.Remove(listBox1.SelectedItem);
             }
         }
 
         private void listBox1_Click(object sender, EventArgs e)
         {
+            if (listBox1.Items.Count > 0 && listBox1.SelectedIndex > -1)
+            {
+                string n = listBox1.SelectedItem.ToString();
+                Image img = (System.Drawing.Bitmap)seesharp.Properties.Resources.ResourceManager.GetObject(n);
+                if (img == null)
+                    return;
+                width = img.Width;
+                height = img.Height;
+                imageShow1.Width = (int)width + 5;
+                imageShow1.Height = (int)height + 5;
+                image = img;
+                imageShow1.BackgroundImage = image;
 
+                MyImage.ImageInfo info = myImage.find(listBox1.SelectedIndex);
+                if (info != null)
+                {
+                    numericUpDown2.Value = info.row;
+                    numericUpDown1.Value = info.col;
+                }
+            }
         }
     }
 }
