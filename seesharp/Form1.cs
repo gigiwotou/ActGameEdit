@@ -14,7 +14,6 @@ namespace seesharp
 {
     public partial class Form1 : Form
     {
-        int a = 1;
         bool mShowLines = false;
         Pen p = new Pen(Color.Black);
         Image image;
