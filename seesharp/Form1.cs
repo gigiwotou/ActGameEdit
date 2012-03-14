@@ -81,9 +81,9 @@ namespace seesharp
 
         private void updateInfo()
         {
-            x = (int)numericUpDown4.Value;
-            y = (int)numericUpDown5.Value;
-            a = (float)numericUpDown3.Value;
+            x = (int)anim_x_numUD.Value;
+            y = (int)anim_y_numUD.Value;
+            a = (float)anim_angle_numUD.Value;
 
             myMatrix = new Matrix();
             myMatrix.RotateAt(a, new Point(x, y));
