@@ -339,5 +339,33 @@ namespace seesharp.Properties {
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
+        
+        internal static System.Drawing.Bitmap Zombie_head {
+            get {
+                object obj = ResourceManager.GetObject("Zombie_head", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        internal static System.Drawing.Bitmap Zombie_paper_body {
+            get {
+                object obj = ResourceManager.GetObject("Zombie_paper_body", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        internal static System.Drawing.Bitmap Zombie_paper_leftarm_lower {
+            get {
+                object obj = ResourceManager.GetObject("Zombie_paper_leftarm_lower", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        internal static System.Drawing.Bitmap Zombie_paper_leftarm_upper2 {
+            get {
+                object obj = ResourceManager.GetObject("Zombie_paper_leftarm_upper2", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
     }
 }

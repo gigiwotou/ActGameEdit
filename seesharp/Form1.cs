@@ -9,6 +9,7 @@ using System.Windows.Forms;
 using System.IO;
 using System.Xml.Serialization;
 using System.Xml;
+using System.Drawing.Drawing2D;
 
 namespace seesharp
 {
@@ -20,6 +21,15 @@ namespace seesharp
         float width { set; get; }
         float height { set; get; }
         MyImage myImage = new MyImage();
+
+        Pen pen = null;
+
+        Bitmap img = null;
+
+        Point adjustment = Point.Empty;
+        Matrix myMatrix = null;
+        int x, y;
+        float a;
 
         public Form1()
         {
@@ -63,6 +73,21 @@ namespace seesharp
             {
                 listBox1.Items.Add(prime.name);
             }
+            x = 0;
+            y = 0;
+            pen = Pens.Red;
+            img = seesharp.Properties.Resources.Zombie_head;
+        }
+
+        private void updateInfo()
+        {
+            x = (int)numericUpDown4.Value;
+            y = (int)numericUpDown5.Value;
+            a = (float)numericUpDown3.Value;
+
+            myMatrix = new Matrix();
+            myMatrix.RotateAt(a, new Point(x, y));
+            panel3.Invalidate();
         }
 
         private void button3_Click(object sender, EventArgs e)
@@ -184,6 +209,28 @@ namespace seesharp
                     numericUpDown1.Value = info.col;
                 }
             }
+        }
+
+        private void numericUpDown3_ValueChanged(object sender, EventArgs e)
+        {
+            updateInfo();
+        }
+
+        private void panel3_Paint(object sender, PaintEventArgs e)
+        {
+            if (myMatrix != null)
+            {
+
+                e.Graphics.MultiplyTransform(myMatrix);
+                e.Graphics.DrawImage(img, new Point(0, 0));
+                e.Graphics.ResetTransform();
+                e.Graphics.DrawRectangle(pen, x - 7, y - 7, 14, 14);
+            }
+        }
+
+        private void button5_Click(object sender, EventArgs e)
+        {
+            updateInfo();
         }
     }
 }

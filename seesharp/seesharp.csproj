@@ -234,6 +234,18 @@
   <ItemGroup>
     <None Include="Resources\LOADING.png" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Zombie_paper_leftarm_lower.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Zombie_paper_leftarm_upper2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Zombie_head.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Zombie_paper_body.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
