@@ -49,14 +49,16 @@
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.tabPage2 = new System.Windows.Forms.TabPage();
+            this.splitContainer5 = new System.Windows.Forms.SplitContainer();
             this.splitContainer4 = new System.Windows.Forms.SplitContainer();
+            this.panel4 = new System.Windows.Forms.Panel();
+            this.anim_y_numUD = new System.Windows.Forms.NumericUpDown();
             this.label5 = new System.Windows.Forms.Label();
+            this.anim_angle_numUD = new System.Windows.Forms.NumericUpDown();
             this.label4 = new System.Windows.Forms.Label();
+            this.anim_x_numUD = new System.Windows.Forms.NumericUpDown();
             this.label3 = new System.Windows.Forms.Label();
             this.anim_rot_button = new System.Windows.Forms.Button();
-            this.anim_y_numUD = new System.Windows.Forms.NumericUpDown();
-            this.anim_x_numUD = new System.Windows.Forms.NumericUpDown();
-            this.anim_angle_numUD = new System.Windows.Forms.NumericUpDown();
             this.panel3 = new System.Windows.Forms.Panel();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown2)).BeginInit();
@@ -75,12 +77,15 @@
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.tabPage2.SuspendLayout();
+            this.splitContainer5.Panel1.SuspendLayout();
+            this.splitContainer5.SuspendLayout();
             this.splitContainer4.Panel1.SuspendLayout();
             this.splitContainer4.Panel2.SuspendLayout();
             this.splitContainer4.SuspendLayout();
+            this.panel4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.anim_y_numUD)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.anim_x_numUD)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.anim_angle_numUD)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.anim_x_numUD)).BeginInit();
             this.SuspendLayout();
             // 
             // button1
@@ -304,7 +309,7 @@
             // 
             // tabPage2
             // 
-            this.tabPage2.Controls.Add(this.splitContainer4);
+            this.tabPage2.Controls.Add(this.splitContainer5);
             this.tabPage2.Location = new System.Drawing.Point(4, 21);
             this.tabPage2.Name = "tabPage2";
             this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
@@ -313,52 +318,117 @@
             this.tabPage2.Text = "tabPage2";
             this.tabPage2.UseVisualStyleBackColor = true;
             // 
+            // splitContainer5
+            // 
+            this.splitContainer5.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.splitContainer5.Location = new System.Drawing.Point(3, 3);
+            this.splitContainer5.Name = "splitContainer5";
+            // 
+            // splitContainer5.Panel1
+            // 
+            this.splitContainer5.Panel1.Controls.Add(this.splitContainer4);
+            // 
+            // splitContainer5.Panel2
+            // 
+            this.splitContainer5.Panel2.BackColor = System.Drawing.Color.DarkGray;
+            this.splitContainer5.Size = new System.Drawing.Size(905, 583);
+            this.splitContainer5.SplitterDistance = 757;
+            this.splitContainer5.TabIndex = 1;
+            // 
             // splitContainer4
             // 
             this.splitContainer4.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.splitContainer4.Location = new System.Drawing.Point(3, 3);
+            this.splitContainer4.Location = new System.Drawing.Point(0, 0);
             this.splitContainer4.Name = "splitContainer4";
             this.splitContainer4.Orientation = System.Windows.Forms.Orientation.Horizontal;
             // 
             // splitContainer4.Panel1
             // 
-            this.splitContainer4.Panel1.Controls.Add(this.label5);
-            this.splitContainer4.Panel1.Controls.Add(this.label4);
-            this.splitContainer4.Panel1.Controls.Add(this.label3);
-            this.splitContainer4.Panel1.Controls.Add(this.anim_rot_button);
-            this.splitContainer4.Panel1.Controls.Add(this.anim_y_numUD);
-            this.splitContainer4.Panel1.Controls.Add(this.anim_x_numUD);
-            this.splitContainer4.Panel1.Controls.Add(this.anim_angle_numUD);
+            this.splitContainer4.Panel1.Controls.Add(this.panel4);
             // 
             // splitContainer4.Panel2
             // 
             this.splitContainer4.Panel2.Controls.Add(this.panel3);
-            this.splitContainer4.Size = new System.Drawing.Size(905, 583);
+            this.splitContainer4.Size = new System.Drawing.Size(757, 583);
             this.splitContainer4.SplitterDistance = 60;
             this.splitContainer4.TabIndex = 0;
+            // 
+            // panel4
+            // 
+            this.panel4.Controls.Add(this.anim_y_numUD);
+            this.panel4.Controls.Add(this.label5);
+            this.panel4.Controls.Add(this.anim_angle_numUD);
+            this.panel4.Controls.Add(this.label4);
+            this.panel4.Controls.Add(this.anim_x_numUD);
+            this.panel4.Controls.Add(this.label3);
+            this.panel4.Controls.Add(this.anim_rot_button);
+            this.panel4.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panel4.Location = new System.Drawing.Point(0, 0);
+            this.panel4.Name = "panel4";
+            this.panel4.Size = new System.Drawing.Size(757, 60);
+            this.panel4.TabIndex = 14;
+            // 
+            // anim_y_numUD
+            // 
+            this.anim_y_numUD.Location = new System.Drawing.Point(280, 15);
+            this.anim_y_numUD.Maximum = new decimal(new int[] {
+            10000,
+            0,
+            0,
+            0});
+            this.anim_y_numUD.Name = "anim_y_numUD";
+            this.anim_y_numUD.Size = new System.Drawing.Size(65, 21);
+            this.anim_y_numUD.TabIndex = 2;
             // 
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(422, 21);
+            this.label5.Font = new System.Drawing.Font("SimSun", 10.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.label5.Location = new System.Drawing.Point(260, 18);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(11, 12);
+            this.label5.Size = new System.Drawing.Size(14, 14);
             this.label5.TabIndex = 4;
             this.label5.Text = "y";
+            // 
+            // anim_angle_numUD
+            // 
+            this.anim_angle_numUD.Location = new System.Drawing.Point(50, 15);
+            this.anim_angle_numUD.Maximum = new decimal(new int[] {
+            360,
+            0,
+            0,
+            0});
+            this.anim_angle_numUD.Name = "anim_angle_numUD";
+            this.anim_angle_numUD.Size = new System.Drawing.Size(65, 21);
+            this.anim_angle_numUD.TabIndex = 0;
+            this.anim_angle_numUD.ValueChanged += new System.EventHandler(this.numericUpDown3_ValueChanged);
             // 
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(238, 21);
+            this.label4.Font = new System.Drawing.Font("SimSun", 10.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.label4.Location = new System.Drawing.Point(148, 18);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(11, 12);
+            this.label4.Size = new System.Drawing.Size(14, 14);
             this.label4.TabIndex = 4;
             this.label4.Text = "x";
+            // 
+            // anim_x_numUD
+            // 
+            this.anim_x_numUD.Location = new System.Drawing.Point(165, 15);
+            this.anim_x_numUD.Maximum = new decimal(new int[] {
+            10000,
+            0,
+            0,
+            0});
+            this.anim_x_numUD.Name = "anim_x_numUD";
+            this.anim_x_numUD.Size = new System.Drawing.Size(65, 21);
+            this.anim_x_numUD.TabIndex = 1;
             // 
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(31, 21);
+            this.label3.Location = new System.Drawing.Point(15, 19);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(29, 12);
             this.label3.TabIndex = 4;
@@ -366,7 +436,7 @@
             // 
             // anim_rot_button
             // 
-            this.anim_rot_button.Location = new System.Drawing.Point(705, 21);
+            this.anim_rot_button.Location = new System.Drawing.Point(404, 14);
             this.anim_rot_button.Name = "anim_rot_button";
             this.anim_rot_button.Size = new System.Drawing.Size(75, 23);
             this.anim_rot_button.TabIndex = 3;
@@ -374,50 +444,13 @@
             this.anim_rot_button.UseVisualStyleBackColor = true;
             this.anim_rot_button.Click += new System.EventHandler(this.button5_Click);
             // 
-            // anim_y_numUD
-            // 
-            this.anim_y_numUD.Location = new System.Drawing.Point(439, 21);
-            this.anim_y_numUD.Maximum = new decimal(new int[] {
-            10000,
-            0,
-            0,
-            0});
-            this.anim_y_numUD.Name = "anim_y_numUD";
-            this.anim_y_numUD.Size = new System.Drawing.Size(120, 21);
-            this.anim_y_numUD.TabIndex = 2;
-            // 
-            // anim_x_numUD
-            // 
-            this.anim_x_numUD.Location = new System.Drawing.Point(255, 21);
-            this.anim_x_numUD.Maximum = new decimal(new int[] {
-            10000,
-            0,
-            0,
-            0});
-            this.anim_x_numUD.Name = "anim_x_numUD";
-            this.anim_x_numUD.Size = new System.Drawing.Size(120, 21);
-            this.anim_x_numUD.TabIndex = 1;
-            // 
-            // anim_angle_numUD
-            // 
-            this.anim_angle_numUD.Location = new System.Drawing.Point(66, 19);
-            this.anim_angle_numUD.Maximum = new decimal(new int[] {
-            360,
-            0,
-            0,
-            0});
-            this.anim_angle_numUD.Name = "anim_angle_numUD";
-            this.anim_angle_numUD.Size = new System.Drawing.Size(120, 21);
-            this.anim_angle_numUD.TabIndex = 0;
-            this.anim_angle_numUD.ValueChanged += new System.EventHandler(this.numericUpDown3_ValueChanged);
-            // 
             // panel3
             // 
             this.panel3.BackColor = System.Drawing.Color.Gray;
             this.panel3.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel3.Location = new System.Drawing.Point(0, 0);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(905, 519);
+            this.panel3.Size = new System.Drawing.Size(757, 519);
             this.panel3.TabIndex = 0;
             this.panel3.Paint += new System.Windows.Forms.PaintEventHandler(this.panel3_Paint);
             // 
@@ -448,13 +481,16 @@
             this.tabControl1.ResumeLayout(false);
             this.tabPage1.ResumeLayout(false);
             this.tabPage2.ResumeLayout(false);
+            this.splitContainer5.Panel1.ResumeLayout(false);
+            this.splitContainer5.ResumeLayout(false);
             this.splitContainer4.Panel1.ResumeLayout(false);
-            this.splitContainer4.Panel1.PerformLayout();
             this.splitContainer4.Panel2.ResumeLayout(false);
             this.splitContainer4.ResumeLayout(false);
+            this.panel4.ResumeLayout(false);
+            this.panel4.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.anim_y_numUD)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.anim_x_numUD)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.anim_angle_numUD)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.anim_x_numUD)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -491,6 +527,8 @@
         private System.Windows.Forms.NumericUpDown anim_y_numUD;
         private System.Windows.Forms.NumericUpDown anim_x_numUD;
         private System.Windows.Forms.Panel panel3;
+        private System.Windows.Forms.SplitContainer splitContainer5;
+        private System.Windows.Forms.Panel panel4;
     }
 }
 
