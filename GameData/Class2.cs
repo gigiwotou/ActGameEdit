@@ -3,9 +3,9 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 
-namespace seesharp
+namespace GameData
 {
-    class Brick
+    class Class2
     {
     }
 }

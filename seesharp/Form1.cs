@@ -10,8 +10,9 @@ using System.IO;
 using System.Xml.Serialization;
 using System.Xml;
 using System.Drawing.Drawing2D;
+using GameData;
 
-namespace seesharp
+namespace ActGameEdit
 {
     public partial class Form1 : Form
     {
@@ -20,7 +21,7 @@ namespace seesharp
         Image image;
         float width { set; get; }
         float height { set; get; }
-        MyImage myImage = new MyImage();
+        GameData.MyImage myImage = new MyImage();
 
         Pen pen = null;
 
@@ -76,7 +77,7 @@ namespace seesharp
             x = 0;
             y = 0;
             pen = Pens.Red;
-            img = seesharp.Properties.Resources.Zombie_head;
+            img = GameData.Properties.Resources.Zombie_head;
         }
 
         private void updateInfo()
@@ -192,7 +193,7 @@ namespace seesharp
             if (listBox1.Items.Count > 0 && listBox1.SelectedIndex > -1)
             {
                 string n = listBox1.SelectedItem.ToString();
-                Image img = (System.Drawing.Bitmap)seesharp.Properties.Resources.ResourceManager.GetObject(n);
+                Image img = (System.Drawing.Bitmap)GameData.Properties.Resources.ResourceManager.GetObject(n);
                 if (img == null)
                     return;
                 width = img.Width;

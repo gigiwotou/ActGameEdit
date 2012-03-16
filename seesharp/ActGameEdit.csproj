@@ -8,7 +8,7 @@
     <ProjectGuid>{E7D72C35-4C4D-41BA-9A38-D5017EF94C30}</ProjectGuid>
     <OutputType>WinExe</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>seesharp</RootNamespace>
+    <RootNamespace>GameData</RootNamespace>
     <AssemblyName>seesharp</AssemblyName>
     <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
@@ -63,7 +63,6 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Brick.cs" />
     <Compile Include="BrickEdit.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -76,7 +75,6 @@
     <Compile Include="Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
-    <Compile Include="MyImage.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="BrickEdit.resx">
@@ -256,6 +254,12 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\Zombie_paper_body.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\GameData\GameData.csproj">
+      <Project>{EFD87B6B-7A39-47C6-9E70-91F97615B34D}</Project>
+      <Name>GameData</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

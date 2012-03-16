@@ -1,4 +1,4 @@
-﻿namespace seesharp
+﻿namespace ActGameEdit
 {
     partial class Form1
     {
